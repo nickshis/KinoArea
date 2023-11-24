@@ -9,6 +9,18 @@
     <title>Kinoarea</title>
   </head>
   <body>
+    <div class="modalSearch">
+      <form class="woww" name="search">
+        <input class="inputModal" type="text" placeholder="Film">
+        <button class="search_btn"></button>
+        <div class="delete">X</div>
+      </form>
+      <div class="vivod">
+        <h3>Films</h3>
+        <div class="cointainer"></div>
+      </div>
+    </div>
+    <div class="neag"></div>
     <div class="container">
       <header>
         <div class="leftheader flex">
@@ -58,7 +70,38 @@
 <br>
 <br>
 
-    <div class="actors">
+<div class="trailers">
+  <h1>Новые трейлеры</h1>
+  <iframe class="iframe"  width="946" height="532" src="https://www.youtube.com/embed/X4d_v-HyR4o"></iframe>
+  <div class="trailer_descr">
+    <h1 class="trailer_title">Fnaf</h1>
+    <img src="./public/   .png" alt="insta">
+  </div>
+  <div class="trailers_div">
+  </div>
+</div>
+
+<div class="now_popular">
+  <div class="now_populars">
+    <h2>Популярные Фильмы</h2>
+    <div class="line"></div>
+    <div class="filter">
+      <p>Все</p>
+      <p>Боевики</p>
+      <p>Приключения</p>
+      <p>Комедии</p>
+      <p>Фантастика</p>
+      <p>Триллеры</p>
+      <p>Драма</p>
+    </div>
+  </div>
+  <div class="popular_films">
+  </div>
+</div>
+</div>
+
+<h1 style="margin-left: 140px;">Популярные Персоны</h1>
+<div class="actors">
         <div class="left">
           <div class="first">
             <p style="color: yellow;">1-место</p>
@@ -77,6 +120,49 @@
         </div>
         <div class="scroll"></div>
     </div>
+    
+    <h1 style="margin-left: 140px; margin-top: 40px;">Последние Новости</h1>
+    <div class="reklamas">
+      <div class="bigreklama">
+        <h3 class="date">15 Aпреля 2020</h3>
+        <div class="texts">
+          <h1>Не время умирать. Перенос релиза фильма  </h1>
+          <h4>Но действия представителей оппозиции в равной степени предоставлены сами себе. В рамках спецификации современных стандартов, стремящиеся вытеснить традиционное производство, нанотехнологии указаны как претенденты на роль ключевых факторов.</h4>
+        </div>
+      </div>
+      <div class="minis">
+        <div class="reklama"></div>
+        <div class="reklama2"></div>
+        <div class="reklama3"></div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="now_popular">
+        <div class="now_populars">
+          <h2>Ожидаемые новинки</h2>
+        </div>
+        <div class="upcoming">
+        </div>
+      </div>
+      </div>
+      <div class="email_ros">
+        <div class="neage"></div>
+        <a class="logo">
+          <img src="/public/Kinoarea.png" alt="">
+        </a>
+        <h1>Подпишитесь на E-mail рассылку</h1>
+        <h4>Если хотиет быть в курсе последних новостей и новинок кино - <br> заполните форму ниже и оформите бесплатную E-mail рассылку! </h4>
+        <form name="email_ros">
+          <input type="email" name="email" placeholder="Введите свой E-mail адрес">
+          <button class="subs">Подписаться</button>
+        </form>
+        <div class="checkbox">
+          <input type="checkbox">
+          <h5>Соглашаюсь на условия политики конфиденциальности</h5>
+        </div>
+      </div>
+    </footer>
     <script type="module" src="/main.js"></script>
   </body>
 </html>

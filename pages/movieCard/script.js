@@ -16,6 +16,9 @@ fetch(base_url + 'movie/now_playing?language=ru', {
 .then(res => res.json())
 .then(res => mahoraga(res.results))
 
+
+
+
 function mahoraga(arr){
     for(let item of arr){
         if(+item.id === +id){

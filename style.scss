@@ -8,6 +8,125 @@
   color: white;
 }
 
+.neag{
+  display: none;
+  width: 100%;
+  height: 100vh;
+  background-color: #2c2c2c9c;
+  z-index: 2;
+  position: fixed;
+}
+
+.trail{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  div{
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('./public/Polygon\ 2\ \(1\).png');
+  }
+}
+
+.trailers{
+  width: 82%;
+  height: 100vh;
+  margin: 0 auto;
+
+  .iframe{
+    width: 100%;
+    height: 70%;
+  }
+
+  .trailer_descr{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 5%;
+    gap: 10px;
+
+    img{
+      width: 100px;
+      height: 13px;
+    }
+  }
+
+  .trailers_div{
+    display: flex;
+    gap: 20px;  
+    width: 100%;
+    height: 20%;
+  }
+  // .trailers_div::-webkit-scrollbar{
+  //   all: unset;
+  // }
+}
+
+.modalSearch{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  .vivod{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 66%;
+  }
+}
+
+.delete{
+  // position: absolute;
+  width: 100px;
+  height: 100px;
+  background: none;
+  border: none;
+  translate: -30% 40%;
+}
+
+.woww{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 6%;
+
+
+  input{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: none;
+    border: 2px solid #FFFFFF;
+    color: white;
+    padding: 10px;
+  }
+
+  button{
+    width: 9%;
+    height: 100%;
+    background-image: url('./public/Vector\ \(7\).png');
+    border: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: yellow;
+    border-radius: 10px;
+    translate: -100% 0%;
+  }
+}
+
+
 body {
   background: #1E2538;
 }
@@ -64,6 +183,34 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.now_popular{
+  margin: 0 auto;
+  width: 82%;
+  margin-top: 50px;
+}
+
+.now_populars{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.now_populars h2{
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.popular_films, .upcoming{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: 400px 400px ;
+  gap: 90px 20px;
+  height: 480px;
+  margin-top: 20px;
 }
 
 .now_on_kino_filter {
@@ -170,6 +317,7 @@ nav {
   width: 82%;
   height: 450px;
   margin: 0 auto;
+  margin-top: 40px;
   
   .left{
     display: flex;
@@ -226,5 +374,169 @@ nav {
     
   .scroll::-webkit-scrollbar{
     all: unset;
+  }
+}
+
+.modal-main{
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  width: 80%;
+  height: 120px;
+  border-radius: 10px;
+  background: #212736;
+  z-index: 2;
+
+
+  .photo-modal{
+    width: 13%;
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.cointainer{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 600px;
+  overflow-y: scroll;
+}
+
+
+.cointainer::-webkit-scrollbar{
+  all: unset;
+}
+
+.modalSearch{
+  display: none;
+  z-index: 3;
+  // position: fixed;
+}
+
+.reklamas{
+  display: flex;
+  width: 82%;
+  height: 80vh;
+  margin: 0 auto;
+  margin-top: 40px;
+
+  .bigreklama{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    padding: 20px;
+    background-image: url('./public/image\ 3\ \(1\).png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+
+    .date{
+      width: 100%;
+      height: 10%;
+    }
+
+    .texts{
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      width: 100%;
+      height: 90%;
+    }
+  }
+
+  .minis{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 23%;
+    height: 100%;
+    padding: 0px 5px;
+    
+    .reklama{
+      width: 100%;
+      height: 30%;
+      background-image: url('./public/2023-11-24_16-55-32.png');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+    }
+    .reklama2{
+      width: 100%;
+      height: 30%;
+      background-image: url('./public/2023-11-24_17-03-38.png');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+    }
+    .reklama3{
+      width: 100%;
+      height: 30%;
+      background-image: url('./public/2023-11-24_17-04-04.png');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+    }
+  }
+}
+
+footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #151A26;
+  margin-top: 40px;
+  width: 100%;
+  height: 1000px;
+
+  .email_ros{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 80%;
+    height: 60vh;
+    background-image: url('./public/Фон.png');
+    background-size: cover;
+
+    form{
+      display: flex;
+      gap: 10px;
+
+      input{
+        width: 300px;
+        height: 40px;
+        border-radius: 10px;
+        padding: 10px;
+        border: 2px solid gray;
+      }
+
+      button{
+        width: 100px;
+        border-radius: 10px;
+        border: 2px solid yellow;
+        background-color: yellow;
+        color: black;
+      }
+    }
+
+    .checkbox{
+      display: flex;
+      gap: 10px;
+
+      input{
+        width: 15px;
+        height: 15px;
+      }
+    }
   }
 }

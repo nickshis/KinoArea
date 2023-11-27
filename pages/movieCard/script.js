@@ -8,26 +8,22 @@ let descr = document.querySelector('.descr')
 let orig = document.querySelector('.orig_title')
 
 
-fetch(base_url + 'movie/now_playing?language=ru', {
+fetch(base_url + `movie/${id}?language=ru`, {
     headers:{
         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNGMzMDE5ZGMzYzFkNjE2NThiMTZkZjhmMzdiNWRjZiIsInN1YiI6IjY1NTc0ZDc0YjU0MDAyMTRkODJjNTE5ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.eeiG0E6O9LFWt0r0wQtQAbShQVv0vvza_4I1XvcgwVE'
     }
 })
 .then(res => res.json())
-.then(res => mahoraga(res.results))
+.then(res => mahoraga(res))
 
 
 
 
-function mahoraga(arr){
-    for(let item of arr){
-        if(+item.id === +id){
-            // main.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500/${item.backdrop_path})`
-            pyt.innerHTML = `Main > Films > ${item.title}`
-            poster.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${item.poster_path})`
-            title.innerHTML = item.title
-            orig.innerHTML = item.original_title
-            descr.innerHTML = item.overview 
-        }
-    }
+function mahoraga(item){
+    main.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${item.backdrop_path})`
+    pyt.innerHTML = `Main > Films > ${item.title}`
+    poster.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${item.poster_path})`
+    title.innerHTML = item.title
+    orig.innerHTML = item.original_title
+    descr.innerHTML = item.overview 
 }

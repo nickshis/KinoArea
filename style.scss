@@ -8,6 +8,11 @@
   color: white;
 }
 
+body{
+  max-width: 1850px;
+  margin: 0 auto;
+}
+
 .neag{
   display: none;
   width: 100%;
@@ -39,6 +44,7 @@
 .trailers{
   width: 82%;
   height: 100vh;
+  max-height: 1000px;
   margin: 0 auto;
 
   .iframe{
@@ -422,6 +428,7 @@ nav {
   height: 80vh;
   margin: 0 auto;
   margin-top: 40px;
+  max-height: 800px;
 
   .bigreklama{
     display: flex;
@@ -518,6 +525,7 @@ footer{
         border-radius: 10px;
         padding: 10px;
         border: 2px solid gray;
+        color: black;
       }
 
       button{
@@ -540,3 +548,4 @@ footer{
     }
   }
 }
+

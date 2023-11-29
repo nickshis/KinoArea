@@ -16,7 +16,6 @@ export function shimiyay(arr, place, genres){
 
         btn.innerHTML = 'Карточка фильма'
         name.innerHTML = item.title
-        console.log(item);
         genres.forEach(el => {
             item.genre_ids.forEach(elem => {
                 if(el.id === elem){
@@ -36,7 +35,7 @@ export function shimiyay(arr, place, genres){
         place.append(main)
 
         btn.onclick = () => {
-            location.assign('./pages/movieCard/?id=' + item.id)
+            location.assign('/pages/movieCard/?id=' + item.id)
         }
     }
 }
@@ -57,6 +56,7 @@ export function ies(arr, place, iframe, cooler){
         trail.onclick = () => {
             getData(`movie/${item.id}/videos`)
             .then(res => {
+                console.log(res);
                 iframe.src = `https://www.youtube.com/embed/${res.results[4].key}`
                 cooler.innerHTML = res.results[4].name
             })
@@ -95,5 +95,35 @@ export function modal(arr, place){
         }
     } else {
         alert('Ничего не нашлось')
+    }
+}
+
+let main = document.querySelector('.super')
+let pyt = document.querySelector('.pyt')
+let poster = document.querySelector('.left')
+let title = document.querySelector('.title')
+let descr = document.querySelector('.descr')
+let orig = document.querySelector('.orig_title')
+let cooler = document.querySelector('.title_trail')
+
+export function mahoraga(item){
+    main.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${item.backdrop_path})`
+    pyt.innerHTML = `Main > Films > ${item.title}`
+    poster.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${item.poster_path})`
+    title.innerHTML = item.title
+    orig.innerHTML = item.original_title
+    descr.innerHTML = item.overview 
+    cooler.innerHTML = item.title
+}
+
+export function photos(arr, place){
+    for(let item of arr){
+        let img = document.createElement('img')
+        
+        img.classList.add('photos_img')
+
+        img.src = `https://image.tmdb.org/t/p/original/${item.file_path}`
+    
+        place.append(img)
     }
 }

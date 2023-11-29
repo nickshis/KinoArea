@@ -3,7 +3,6 @@ import { actors } from './modules/actors'
 import { genres } from './modules/db'
 import { getData } from './modules/fetch'
 
-let base_url = 'https://api.themoviedb.org/3/'
 let place = document.querySelector('.new_films')
 let btn_search = document.querySelector('.search')
 let neag = document.querySelector('.neag')

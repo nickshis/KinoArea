@@ -19,3 +19,31 @@ export function actors(arr, place){
         }
     }
 }
+
+export function actorMovie(arr, place){
+    for(let item of arr){
+        let main = document.createElement('div')
+        let img = document.createElement('img')
+        let text = document.createElement('div')
+        let h3 = document.createElement('h3')
+        let hh3 = document.createElement('h3')
+    
+        main.classList.add('main_actorMovie')
+        text.classList.add('text_actorMovie')
+
+        img.src = `https://image.tmdb.org/t/p/original/${item.profile_path}`
+
+        hh3.style.color = 'yellow'
+
+        h3.innerHTML = item.name
+        hh3.innerHTML = item.character
+
+        main.append(img, text)
+        text.append(h3, hh3)
+        place.append(main)
+
+        main.onclick = () => {
+            location.assign('/pages/actorInfo/?id=' + item.id)
+        }
+    }    
+}

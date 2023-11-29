@@ -1,29 +1,26 @@
+import { getData } from '/modules/fetch'
+import { mahoraga, photos } from '/modules/functions'
+import { actorMovie } from '/modules/actors'
+
 let id = location.search.split('=').at(-1)
-let base_url = 'https://api.themoviedb.org/3/'
-let main = document.querySelector('.main')
-let pyt = document.querySelector('.pyt')
-let poster = document.querySelector('.left')
-let title = document.querySelector('.title')
-let descr = document.querySelector('.descr')
-let orig = document.querySelector('.orig_title')
+let iframe = document.querySelector('.trail')
+let actorDiv = document.querySelector('.actorsDivok')
+let photoDiv = document.querySelector('.photos')
 
-
-fetch(base_url + `movie/${id}?language=ru`, {
-    headers:{
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNGMzMDE5ZGMzYzFkNjE2NThiMTZkZjhmMzdiNWRjZiIsInN1YiI6IjY1NTc0ZDc0YjU0MDAyMTRkODJjNTE5ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.eeiG0E6O9LFWt0r0wQtQAbShQVv0vvza_4I1XvcgwVE'
-    }
-})
-.then(res => res.json())
+getData(`movie/${id}?language=ru`)
 .then(res => mahoraga(res))
 
+getData(`movie/${id}/videos`)
+.then(res => {
+    iframe.src = `https://www.youtube.com/embed/${res.results[4].key}`
+})
 
+getData(`movie/${id}/credits`)
+.then(res => {
+    actorMovie(res.cast.slice(0, 14), actorDiv)
+})
 
-
-function mahoraga(item){
-    main.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${item.backdrop_path})`
-    pyt.innerHTML = `Main > Films > ${item.title}`
-    poster.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${item.poster_path})`
-    title.innerHTML = item.title
-    orig.innerHTML = item.original_title
-    descr.innerHTML = item.overview 
-}
+getData(`movie/${id}/images`)
+.then(res => {
+    photos(res.backdrops.slice(0, 8), photoDiv)
+})

@@ -1,0 +1,1 @@
+export let user_auth = JSON.parse(localStorage.getItem('user_auth')) || null

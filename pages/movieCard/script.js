@@ -17,7 +17,7 @@ getData(`movie/${id}/videos`)
 
 getData(`movie/${id}/credits`)
 .then(res => {
-    actorMovie(res.cast.slice(0, 14), actorDiv)
+    actorMovie(res.cast.slice(0, 10), actorDiv)
 })
 
 getData(`movie/${id}/images`)

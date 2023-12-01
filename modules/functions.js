@@ -1,4 +1,5 @@
-import { getData } from "./fetch"
+import { getData, postData } from "./fetch"
+import { user_auth } from './userData'
 
 export function shimiyay(arr, place, genres){
     for(let item of arr){
@@ -127,3 +128,83 @@ export function photos(arr, place){
         place.append(img)
     }
 }
+
+let placcik = document.querySelector('.rightheader')
+let neag = document.querySelector('.neag')
+
+export function userFlipFlap(item, place, neag){
+    place.innerHTML = `<img class="search" src="/public/Поиск.png" alt="">`
+
+    let main = document.createElement('div')
+    let userFlipFlap = document.createElement('div')
+    let img = document.createElement('img')
+    let userName = document.createElement('h5')
+    let tritochki = document.createElement('img')
+
+    userFlipFlap.classList.add('userFlipFlap')
+    main.classList.add('userFlipFlaps')
+    img.classList.add('avatar')
+    tritochki.classList.add('search')
+
+    userName.innerHTML = item.username
+
+    img.src = `https://www.gravatar.com/avatar/${item.avatar.gravatar.hash}`
+    tritochki.src = '/public/more-vertical.svg'
+
+    main.append(img, userName, tritochki)
+    userFlipFlap.append(main)
+    place.append(userFlipFlap)
+
+    let logOut = document.createElement('div')
+    let logImg = document.createElement('img')
+    let textLog = document.createElement('h3')
+
+    logOut.classList.add('logOut')
+
+    logImg.src = '/public/log-in.svg'
+
+    textLog.innerHTML = 'Log Out'
+
+    logOut.append(logImg, textLog)
+
+    logOut.onclick = () => {
+        localStorage.removeItem('user_auth')
+        location.reload()
+        // hibeyba(placcik, neag)
+    }
+
+    let home = document.createElement('div')
+    let homeImg = document.createElement('img')
+    let textHome = document.createElement('h3')
+
+    home.classList.add('home')
+
+    homeImg.src = '/public/home.svg'
+
+    textHome.innerHTML = 'Home'
+
+    home.append(homeImg, textHome)
+
+    home.onclick = () => {
+        location.assign('/pages/homePage/')
+    }
+
+    tritochki.onclick = () => {
+        userFlipFlap.classList.add('activado')
+        neag.style.display = 'block'
+        userFlipFlap.append(home, logOut)
+        main.style.height = '33%'
+        neag.onclick = () => {
+            place.innerHTML = `<img class="search" src="/public/Поиск.png" alt="">`
+            userFlipFlap.innerHTML = ""
+            place.append(userFlipFlap)
+            userFlipFlap.append(main)
+            neag.style.display = 'none'
+            main.style.height = '100%'
+            userFlipFlap.classList.remove('activado')
+        }
+    }
+
+
+}
+
